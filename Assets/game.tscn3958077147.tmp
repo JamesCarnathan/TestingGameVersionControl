@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxxedja4jpjg"]
+
+[ext_resource type="PackedScene" uid="uid://bye8kroxbgg53" path="res://Assets/player.tscn" id="1_7w0at"]
+[ext_resource type="PackedScene" uid="uid://8lkxjvfq8le6" path="res://Assets/Scenes/FloorObjects/normal_floor.tscn" id="2_0hivi"]
+[ext_resource type="PackedScene" uid="uid://qc73thejd2ol" path="res://Assets/Scenes/FloorObjects/moving_floor.tscn" id="3_ogrtk"]
+[ext_resource type="PackedScene" uid="uid://cqhqb2yt5ivh0" path="res://Assets/Scenes/FloorObjects/damaging_floor.tscn" id="4_ho2al"]
+
+[node name="Game" type="Node2D"]
+
+[node name="FloorObjects" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_7w0at")]
+position = Vector2(4, 5)
+
+[node name="NormalFloor" parent="." instance=ExtResource("2_0hivi")]
+position = Vector2(-9, 260)
+
+[node name="MovingFloor" parent="." instance=ExtResource("3_ogrtk")]
+position = Vector2(420, 219)
+
+[node name="Damaging Floor" parent="." instance=ExtResource("4_ho2al")]
+position = Vector2(138, 220)
+
+[node name="NormalFloor2" parent="." instance=ExtResource("2_0hivi")]
+position = Vector2(0, 363)
+scale = Vector2(17.32, 0.1)

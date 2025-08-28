@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://qc73thejd2ol"]
+
+[ext_resource type="Script" uid="uid://bw4tg5iqgr8ux" path="res://Scripts/moving_floor.gd" id="1_q2d08"]
+[ext_resource type="Texture2D" uid="uid://dskl7hjjgmd6u" path="res://icon.svg" id="2_fee8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8gef"]
+size = Vector2(131, 126)
+
+[node name="MovingFloor" type="StaticBody2D"]
+scale = Vector2(3, 0.1)
+script = ExtResource("1_q2d08")
+speed = 300.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("2_fee8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_f8gef")
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="End" type="Node2D" parent="."]
+position = Vector2(150, 0)

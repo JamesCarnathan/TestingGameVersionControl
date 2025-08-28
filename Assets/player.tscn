@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bye8kroxbgg53"]
+
+[ext_resource type="Script" uid="uid://ocvpp6mnthqn" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dskl7hjjgmd6u" path="res://icon.svg" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_onrkg")
+speed = 500.0
+jump_height = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP_BAR" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP_LOWER" type="ColorRect" parent="UI/HP_BAR"]
+offset_left = -66.0
+offset_top = -80.0
+offset_right = 64.0
+offset_bottom = -70.0
+color = Color(1, 0, 0, 1)
+
+[node name="HP_HIGHER" type="ColorRect" parent="UI/HP_BAR"]
+offset_left = -66.0
+offset_top = -80.0
+offset_right = 64.0
+offset_bottom = -70.0
+color = Color(0, 1, 0, 1)
